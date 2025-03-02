@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI4Pi - Pi Transactions</title>
+  <!-- Basic styling; you can adjust as needed -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+      margin: 5px;
+    }
+
+    /* Log area */
+    .output {
+      margin: 10px auto;
+      padding: 10px;
+      background: black;
+      color: limegreen;
+      font-family: monospace;
+      width: 80%;
+      max-width: 600px;
+      height: 200px;
+      overflow-y: auto;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    /* Container for Pi Drip System (drip.js) */
+    #dripContainer {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    /* Container for the AI walls */
+    #aiWallsRoot {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your existing Pi UI -->
+  <h1>AI4Pi - Pi Transactions</h1>
+  <button onclick="loginUser()">🔑 Log In with Pi Network</button>
+  <input type="number" id="amountInput" placeholder="Enter Pi amount">
+  <button onclick="sendPiToAI4Pi()">💰 Send Pi to AI4Pi</button>
+  <div class="output" id="output">[Logs will appear here]</div>
+
+  <!-- Pi Drip System container (drip.js will create UI here) -->
+  <div id="dripContainer"></div>
+
+  <!-- AI Walls container; aiWalls.js will append the 2x2 grid here -->
+  <div id="aiWallsRoot"></div>
+
+  <!-- 1) Pi SDK -->
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+  <!-- 2) main.js: Your Pi login & payment logic -->
+  <script src="main.js"></script>
+
+  <!-- 3) drip.js: Pi Drip system -->
+  <script src="drip.js"></script>
+
+  <!-- 4) aiWalls.js: 2x2 AI walls -->
+  <script src="aiWalls.js"></script>                       
+</body>
+</html>
